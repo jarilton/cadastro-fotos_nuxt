@@ -1,7 +1,5 @@
 <template>
   <div class="index">
-    <Header />
-    <Sidebar />
     <Content />
     <Footer />
   </div>
