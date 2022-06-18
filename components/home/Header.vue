@@ -1,5 +1,15 @@
 <template>
-  <div>Cabeçalho</div>
+  <div class="header">
+    <div class="header__container">
+      <img 
+        src="@/assets/img/logo.png" 
+        alt="Logo" 
+        width="70" 
+        height="70" 
+      />
+      <Sidebar />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -8,4 +18,17 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+  .header {
+    background-color: gray;
+    &__container {
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        border-radius: 35px
+      }
+    }
+  }
+</style>
