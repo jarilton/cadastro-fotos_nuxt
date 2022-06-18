@@ -1,7 +1,6 @@
 <template>
   <div class="index">
     <Content />
-    <Footer />
   </div>
 </template>
 
