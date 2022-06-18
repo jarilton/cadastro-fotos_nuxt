@@ -1,0 +1,97 @@
+button,
+input {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  outline: inherit;
+}
+input {
+  cursor: text;
+}
+button {
+  cursor: pointer;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 320px) {
+  .container {
+    max-width: 92%;
+  }
+}
+
+@media (min-width: 360px) {
+  .container {
+    max-width: 88%;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 90%;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 92%;
+  }
+}
+// @media (min-width: 1360px) {
+//   .container {
+//     max-width: 1280px;
+//   }
+// }
+// @media (min-width: 1440px) {
+//   .container {
+//     max-width: 1000px;
+//   }
+// }
+@media (min-width: 1600px) {
+  .container {
+    max-width: 83%;
+  }
+}
+@media (min-width: 1900px) {
+  .container {
+    max-width: 80%;
+  }
+}

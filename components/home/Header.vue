@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss" scoped>
   .header {
-    background-color: gray;
+    background-color: #3F2C2C;
     &__container {
       padding: 20px 40px;
       display: flex;
