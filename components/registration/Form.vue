@@ -2,6 +2,7 @@
   <div class="form">
     <div class="form__container">
       <div class="form__title">Cadastro</div>
+      {{ this.photo }}
       <form @submit.prevent="grava()">
         <div class="form__control">
           <label for="title">Titulo</label>
@@ -10,8 +11,7 @@
             id="titulo"
             autocomplete="off"
             placeholder="Digite o titulo"
-            @input="photo.title = $event.target.value"
-            :value="photo.title"
+            v-model="photo.title"
           />
         </div>
         <div class="form__control">
@@ -21,8 +21,7 @@
             id="titulo"
             autocomplete="off"
             placeholder="Digite a url"
-            @input="photo.url = $event.target.value"
-            :value="photo.url"
+            v-model="photo.url"
           />
         </div>
         <div class="form__control">
@@ -32,8 +31,7 @@
             id="titulo"
             autocomplete="off"
             placeholder="Digite a descrição"
-            @input="photo.description = $event.target.value"
-            :value="photo.description"
+            v-model="photo.description"
           />
         </div>
         <div class="form__button">
@@ -46,26 +44,21 @@
 </template>
 
 <script>
+import Photo from '@/domain/photo/Photo'
 export default {
   name: "Form",
   data() {
     return {
-      photo: {
-        title: "",
-        url: "",
-        description: "",
-      },
+      photo: new Photo()
     };
   },
   methods: {
     grava() {
       console.log("dados enviado para a API")
 
-      this.photo = {
-        title: "",
-        url: "",
-        description: "",
-      }
+      console.log(this.photo)
+
+      this.photo = new Photo()
     }
   }
 };
