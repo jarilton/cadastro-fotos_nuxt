@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 .footer {
   &__container {
-    height: 120px;
+    height: 70px;
     background-color: #3F2C2C;
     bottom: 0;
     position: fixed;
