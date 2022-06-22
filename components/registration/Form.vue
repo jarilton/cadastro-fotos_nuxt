@@ -2,6 +2,10 @@
   <div class="form">
     <div class="form__container">
       <div class="form__title">Cadastro</div>
+<<<<<<< HEAD
+=======
+      {{ this.photo }}
+>>>>>>> feature/form
       <form @submit.prevent="grava()">
         <div class="form__control">
           <label for="title">Titulo</label>
