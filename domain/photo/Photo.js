@@ -1,6 +1,5 @@
 export default class Photo {
       constructor(title = "", url = "", description = "") {
-<<<<<<< HEAD
 
             this.title = title;
 
@@ -10,10 +9,3 @@ export default class Photo {
 
       }
 } 
-=======
-            this.title = title;
-            this.url = url;
-            this.description = description;
-      }
-}     
->>>>>>> feature/form

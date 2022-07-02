@@ -61,41 +61,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.animation-overlay-enter-active {
-  transition: all 0.1s ease-out;
-  opacity: 0.96;
-}
-.animation-overlay-leave-active {
-  transition: all 0.1s ease-out;
-  opacity: 0.9;
-}
-.animation-menu-enter-active {
-  transition: all 0.1s ease-out;
-}
-.animation-menu-leave-active {
-  transition: all 0.1s ease-out;
-}
-.animation-menu-enter,
-.animation-menu-leave-to {
-  transform: translatey(-7px);
-}
 .header {
   &__backdrop {
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 200;
   }
   &__top {
-    background: rgb(2, 0, 36);
-    background: linear-gradient(
-      90deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(9, 98, 121, 1) 50%,
-      rgba(2, 0, 36, 1) 100%,
+    background: rgb(203, 204, 210);
+    background: radial-gradient(
+      circle,
+      rgba(203, 204, 210, 1) 0%,
+      rgba(18, 17, 17, 1) 80%
     );
     padding: 8px 0;
     z-index: 201;
@@ -115,12 +96,11 @@ export default {
   }
   &__links-list {
     position: absolute;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(
-      90deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(9, 98, 121, 1) 50%,
-      rgba(2, 0, 36, 1) 100%,
+    background: rgb(203, 204, 210);
+    background: radial-gradient(
+      circle,
+      rgba(203, 204, 210, 1) 0%,
+      rgba(18, 17, 17, 1) 80%
     );
     width: 100%;
     left: 0;
@@ -136,7 +116,7 @@ export default {
       list-style: none;
       margin: 18px 0;
       a {
-        color: white;
+        color: #ffa500;
         text-decoration: none;
         font-size: 18px;
         font-weight: bold;
@@ -168,7 +148,7 @@ export default {
     }
   }
 }
-@media(min-width: 1024px) {
+@media (min-width: 1024px) {
   .header {
     &__links-list {
       max-width: none;
