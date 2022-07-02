@@ -16,16 +16,16 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
+  margin-top: 100px;
   &__container {
-    height: 120px;
-    background-color: #3F2C2C;
     height: 70px;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(
-      90deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(9, 98, 121, 1) 50%,
-      rgba(2, 0, 36, 1) 100%,
+    background-color: #3f2c2c;
+    height: 70px;
+    background: rgb(18, 17, 17);
+    background: radial-gradient(
+      circle,
+      rgba(18, 17, 17, 1) 70%,
+      rgba(203, 204, 210, 1) 100%
     );
     bottom: 0;
     position: fixed;
@@ -39,8 +39,7 @@ export default {
     align-items: center;
     font-size: 13px;
     font-weight: bold;
-    color: #ffffff;
+    color: #ffa500;
   }
 }
-
 </style>

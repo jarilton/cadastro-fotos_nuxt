@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "nuxt --open",
     "build": "nuxt build",
+    "backend": "json-server --watch db.json --port 3306",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "test": "jest"
@@ -19,7 +20,9 @@
     "nuxt-webfontloader": "^1.1.0",
     "swiper": "^8.0.7",
     "vue": "^2.6.14",
+    "vue-api-query": "^1.9.1",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-resource": "^1.5.3",
     "vue-select": "^3.10.8",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
