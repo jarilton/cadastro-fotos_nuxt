@@ -1,8 +1,8 @@
 <template>
   <div class="form">
     <div class="form__container">
-      <div class="form__title">Cadastro</div>
-      <form @submit.prevent="grava()">
+      <form @submit.prevent="submitForm()" class="form__box">
+        <div class="form__title">Cadastro</div>
         <div class="form__control">
           <label for="title">Titulo</label>
           <input
@@ -34,8 +34,8 @@
           />
         </div>
         <div class="form__button">
-          <Nuxt-link to="/" type="submit" class="form__back">Voltar</Nuxt-link>
           <button class="form__save">Salvar</button>
+          <Nuxt-link to="/" type="submit" class="form__back">Voltar</Nuxt-link>
         </div>
       </form>
     </div>
@@ -43,18 +43,33 @@
 </template>
 
 <script>
-import Photo from '@/domain/photo/Photo'
+import { mapActions  } from "vuex";
 export default {
   name: "Form",
   data() {
     return {
-      photo: new Photo()
+      photo: {
+        id: null,
+        title: null,
+        url: null,
+        description: null,
+      }
     };
   },
+  created() {
+    if(this.currentPhotos) {
+      this.photo.id = this.currentPhotos.id;
+      this.photo.title = this.currentPhotos.title;
+      this.photo.url = this.currentPhotos.url;
+      this.photo.description = this.currentPhotos.description;
+    }
+  },
   methods: {
-    grava() {
-      this.$http.post('http://localhost:3000/photos')
-        .then(() => this.photo = new Photo(), err => console.log(err));
+    ...mapActions({
+      submitPhotos: 'photos/submitPhotos'
+    }),
+    submitForm() {
+      this.submitPhotos(this.photo)
     }
   }
 };
@@ -89,32 +104,64 @@ export default {
     }
   }
   &__button {
-    display: flex;
-    justify-content: center;
     margin-top: 10px;
   }
-  &__back {
+  &__save {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
     border: 1px solid #808080;
-    border-radius: 10px;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+  }
+  &__back {
+    background-color: #d3d3d3;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
     font-weight: bold;
     height: 40px;
-    width: 100px;
+    width: 100%;
     margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     color: #000000;
+    margin-top: 10px;
   }
-  &__save {
-    background-color: #0000ff;
-    color: #ffffff;
-    font-weight: bold;
-    border: 1px solid #808080;
-    border-radius: 10px;
-    height: 40px;
-    width: 100px;
-    margin-left: 10px;
+}
+
+@media (min-width: 768px) {
+  .form {
+    &__box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+      width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__button {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+    &__save {
+      margin-left: 20px;
+    }
+    &__back {
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .form {
+    &__box {
+      width: 700px;
+    }
   }
 }
 </style>
