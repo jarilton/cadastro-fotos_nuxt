@@ -21,12 +21,7 @@ export default {
     height: 70px;
     background-color: #3f2c2c;
     height: 70px;
-    background: rgb(18, 17, 17);
-    background: radial-gradient(
-      circle,
-      rgba(18, 17, 17, 1) 70%,
-      rgba(203, 204, 210, 1) 100%
-    );
+    background: #000000;
     bottom: 0;
     position: fixed;
     width: 100%;
