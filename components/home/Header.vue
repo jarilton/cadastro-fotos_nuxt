@@ -20,12 +20,12 @@
               <div class="header__line">
                 <li>
                   <Nuxt-link to="/">
-                    <a @click="menuOpen = false">Inicio</a>
+                    <a @click="menuOpen = false">INICIO</a>
                   </Nuxt-link>
                 </li>
                 <li>
                   <Nuxt-link to="/registration">
-                    <a @click="menuOpen = false">Cadastro de fotos</a>
+                    <a @click="menuOpen = false">CADASTRAR</a>
                   </Nuxt-link>
                 </li>
               </div>
@@ -65,19 +65,14 @@ export default {
   &__backdrop {
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 200;
   }
   &__top {
-    background: rgb(203, 204, 210);
-    background: radial-gradient(
-      circle,
-      rgba(203, 204, 210, 1) 0%,
-      rgba(18, 17, 17, 1) 80%
-    );
+    background: #000000;
     padding: 8px 0;
     z-index: 201;
     position: relative;
@@ -96,12 +91,7 @@ export default {
   }
   &__links-list {
     position: absolute;
-    background: rgb(203, 204, 210);
-    background: radial-gradient(
-      circle,
-      rgba(203, 204, 210, 1) 0%,
-      rgba(18, 17, 17, 1) 80%
-    );
+    background: #000000;
     width: 100%;
     left: 0;
     top: 81px;

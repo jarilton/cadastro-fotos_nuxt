@@ -60,7 +60,7 @@ export default {
   },
   created() {
     this.$store.dispatch("photos/getPhotos").then((response) => {
-      console.table(response);
+      //console.table(response);
     });
   },
 };
