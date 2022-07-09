@@ -3,7 +3,7 @@
     <div class="container">
       <div class="main__box-one">
         <div class="main__title">{{ title }}</div>
-        <p v-show="mensage" class="main__mensage">{{ mensage }}}</p>
+        <p v-show="mensage" class="main__mensage">{{ mensage }}</p>
         <div class="main__filter">
           <div class="main__filter-icon" />
           <input type="search" class="main__filter-text" placeholder="Pesquisar" />
@@ -21,8 +21,12 @@
               <div class="main__panel-title">{{ photo.title }}</div>
               <img class="main__panel-img" :src="photo.url" />
               <div class="main__panel-button">
-                <div class="main__panel-icon" />
-                <div class="main__panel-remove">Remover</div>
+                <div class="main__panel-icon-edit" />
+                <div @click="editPhoto(photo.id)" class="main__panel-edit">Editar</div>
+                <div class="main__panel-icon-delete" />
+                <div @click="deletePhotos(photo.id)" class="main__panel-delete">
+                  Remover
+                </div>
               </div>
             </div>
           </li>
@@ -46,9 +50,8 @@ export default {
     };
   },
   computed: {
-    ...mapState({
-      photos: (state) => state.photos.getPhotos,
-    }),
+    ...mapState(["photos"]),
+
     photosFilter() {
       if (this.filter) {
         const exp = new RegExp(this.filter.trim(), "i");
@@ -56,6 +59,18 @@ export default {
       } else {
         return this.photos;
       }
+    },
+  },
+  methods: {
+    editPhoto(photos) {
+      console.log(photos);
+      this.$store.dispatch("photos/editPhotos").then(() => this.photos);
+    },
+    deletePhotos(id) {
+      this.$store.dispatch("photos/deletePhotos", id).then(() => {
+        const idx = this.photos.find((obj) => obj.id === id);
+        this.photos.splice(idx, 1);
+      });
     },
   },
   created() {
@@ -136,12 +151,20 @@ export default {
     width: 100%;
     height: 194px;
   }
-  &__panel-icon {
+  &__panel-icon-edit {
+    background: url("@/assets/icons/icon-edit.svg");
+    background-size: cover;
+    width: 14px;
+    height: 17px;
+    margin-right: 2px;
+  }
+  &__panel-icon-delete {
     background: url("@/assets/icons/icon-delete.svg");
     background-size: cover;
     width: 14px;
     height: 15px;
-    margin-right: 8px;
+    margin-right: 2px;
+    margin-left: 8px;
   }
   &__panel-button {
     display: flex;
@@ -149,7 +172,12 @@ export default {
     align-items: center;
     width: 100%;
     height: 45px;
+  }
+  &__panel-delete {
     color: #ff0000;
+  }
+  &__panel-edit {
+    color: #808080;
   }
 }
 

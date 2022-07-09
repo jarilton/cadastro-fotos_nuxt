@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nuxt --open",
     "build": "nuxt build",
-    "backend": "json-server --watch db.json --port 3306",
+    "serve": "json-server --watch db.json --port 3306",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "test": "jest"
