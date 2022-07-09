@@ -1,8 +1,11 @@
 export default {
-      STORE(state, payload) {
+      GET_PHOTOS(state, payload) {
             state.photos = payload
       },
-      SUBMITPHOTOS(state, payload) {
+      SUBMIT_PHOTOS(state, payload) {
             state.photos = payload
-      }
+      },
+      EDIT_PHOTOS(state, payload) {
+            state.photos = payload
+      },
 }
